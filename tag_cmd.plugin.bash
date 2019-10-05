@@ -50,17 +50,18 @@ fi
 
 function tag {
     local mark_to_add
-    mark_to_add=$* : $( history \
-	    | tail -n2 \
-	    | head -n1 \
-	    | sed -iE 's/\s+[0-9]+\s+(.+)/\1/' 
+    cmd=$( history  \
+	    | tail -2            \
+	    | head -1            \
+	    | sed -E 's/\s+[0-9]+\s+(.+)/\1/' 
     )
 
+    mark_to_add="$* : $cmd"
     if grep -qxFe "${mark_to_add}" "${TAGCMD_FILE}"; then
         echo "** The following command has already been saved **"
     else
         echo "${mark_to_add}" >> "${TAGCMD_FILE}"
-        echo "** The following command has already been saved **"
+        echo "** command has been tagged! **"
     fi
     echo "${mark_to_add}" | _color_marks
 }
