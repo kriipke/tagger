@@ -19,8 +19,8 @@ Usage: tag key[:value] file...
 ## usage
 
 You can either use the `tag` command to add:
-    * a one dimensional tag, i.e. a label, like "script" or "myproject"
-    * a two dimensional tag, i.e. a key/value pair, such as "configuration: networking" or "media: video"
+ - a one dimensional tag, i.e. a label, like "script" or "myproject"
+ - a two dimensional tag, i.e. a key/value pair, such as "configuration: networking" or "media: video"
 
 ### adding and deleting tags
 
@@ -42,17 +42,17 @@ If `tag` just receives a single argument then that argument is treated as a path
 
 ```
 $ tag /etc
-TAG        	FILE
+TAG         FILE
 
 network     /etc/nsswitch.conf
 network     /etc/hosts
-email      	/etc/dnf/automatic.conf
-email      	/etc/rkhunter.conf
-keybindings	/etc/tmux/tmux.map
+email       /etc/dnf/automatic.conf
+email       /etc/rkhunter.conf
+keybindings /etc/tmux/tmux.map
 keybindings /etc/keybindings
-config     	/etc/asound.conf
-config     	/etc/irssi.conf
-config     	/etc/profile.d
+config      /etc/asound.conf
+config      /etc/irssi.conf
+config      /etc/profile.d
 config      /etc/bashrc.d
 ```
 
@@ -60,16 +60,16 @@ The `-v` switch will show the values associated with any tags as well:
 
 ```
 $ tag -v /etc
-TAG        	VALUE   	FILE
+TAG         VALUE       FILE
 network     nss         /etc/nsswitch.conf
 network     dns         /etc/hosts
-email      	            /etc/dnf/automatic.conf
-email      	            /etc/rkhunter.conf
-keybindings	tmux        /etc/tmux/tmux.map
+email                   /etc/dnf/automatic.conf
+email                   /etc/rkhunter.conf
+keybindings tmux        /etc/tmux/tmux.map
 keybindings             /etc/keybindings
-config     	alsa        /etc/asound.conf
-config     	irssi       /etc/irssi.conf
-config     	shell       /etc/profile.d
+config      alsa        /etc/asound.conf
+config      irssi       /etc/irssi.conf
+config      shell       /etc/profile.d
 config      shell       /etc/bashrc.d
 ```
 
