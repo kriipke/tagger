@@ -204,6 +204,8 @@ case $# in
                     if [ "$#" -eq 2 ]; then
                         modify "$@"
                         exit 0
+                    elif [ "$#" -eq 1 ] && [ "$PRINT_VALUES" ]; then
+                        QUERY_PATH="$1"
                     else
                         usage
                         exit 1
